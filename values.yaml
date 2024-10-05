@@ -1,0 +1,20 @@
+namespace: team1-tenant1
+
+postgres:
+  db: mXRhX2RhdGE  # base64 encoded value for mta_data
+  user: cG9zdGdyZXM  # base64 encoded value for postgres
+  password: YWRtaW4xMjM  # base64 encoded value for admin123
+
+pvc:
+  name: my-postgres-pvc
+  storage: 1Gi
+  storageClassName: gp3-csi
+  volumeMode: Block
+
+service:
+  name: postgres-service
+  port: 5432
+
+route:
+  name: postgres-route
+  host: postgres-team1.apps.natwest.priartw.com
